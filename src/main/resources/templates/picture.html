@@ -1,0 +1,11 @@
+#parse("header.html")
+<div class="row">
+    <span class="personattr">身份证正面照片:</span>
+    <input type="hidden" name="img"  id="thumbUrl"/>
+    <input type="file" name="logoFile" id="logoFile" onchange="setImg(this);">
+    <span><img id="thumburlShow" src="" width="120" height="120"/></span>
+
+</div>
+#parse("js.html")
+<script type="text/javascript" src="/scripts/main/self/picture.js"></script>
+#parse("footer.html")
