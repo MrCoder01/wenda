@@ -42,6 +42,7 @@ public class CommentController {
     public String addComment(@RequestParam("questionId") int questionId,
                              @RequestParam("content") String content) {
         try {
+            //设置内容
             Comment comment = new Comment();
             comment.setContent(content);
             comment.setCreatedDate(new Date());
