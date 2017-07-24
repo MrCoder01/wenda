@@ -75,7 +75,7 @@ public class QuestionController {
             Question question = questionService.getById(qid);
             //问题信息
             model.addAttribute("question",question);
-            model.addAttribute("user",userService.getById(question.getUserId()));
+            //model.addAttribute("user",userService.getById(question.getUserId()));
 
             //问题对应的评论
             List<Comment> commentList = commentService.getCommentByEntity(qid, EntityType.ENTITY_QUESTION);

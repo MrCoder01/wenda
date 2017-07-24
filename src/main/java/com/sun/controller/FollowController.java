@@ -175,7 +175,7 @@ public class FollowController {
         return "followers";
     }
 
-    //查看某个用户的关注
+    //查看某个用户的用户关注列表（查看某个用户的问题关注列表要额外写方法）
     @RequestMapping(path="/user/{uid}/followees",method = {RequestMethod.GET})
     public String followees(Model model, @PathVariable("uid") int userId){
         List<Integer> followeeIds = followService.getFollowees(userId,EntityType.ENTITY_USER,0,10);

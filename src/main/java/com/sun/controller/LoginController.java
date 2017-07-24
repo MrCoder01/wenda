@@ -31,10 +31,11 @@ public class LoginController {
     public String register(Model model,
                            @RequestParam("username") String username,
                            @RequestParam("password") String password,
+                           @RequestParam("headUrl") String headUrl,
                            @RequestParam(value = "next", required = false) String next,
                            HttpServletResponse response) {
 
-        Map<String, String> map = userService.register(username, password);
+        Map<String, String> map = userService.register(username, password, headUrl);
         try {
             if (map.containsKey("ticket")) {
                 Cookie cookie = new Cookie("ticket", map.get("ticket"));
