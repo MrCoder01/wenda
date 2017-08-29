@@ -62,7 +62,7 @@ public class Message {
         this.hasRead = hasRead;
     }
 
-    //数据存储数据时从给方法中获取数据，get一般包含的是set方法的数据，也可紫定义生成数据，
+    //JavaBean的get方法返回的数据，就是插入到数据库中的数据。
     // 此时set方法就无效了，如setConversationId()可以删除
     public String getConversationId() {
         if (fromId < toId) {

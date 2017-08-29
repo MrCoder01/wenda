@@ -12,6 +12,7 @@ import java.util.List;
  */
 @Repository
 @Mapper
+//此接口名必须与xml对应的namespace命名空间一致
 public interface QuestionDao {
 
     String TABLE_NAME = " question ";
@@ -28,6 +29,7 @@ public interface QuestionDao {
     @Delete({"delete from ",TABLE_NAME," where id=#{id}"})
     void deleteById(int id);
 
+    //对应xml中id为selectQuestion的查询标签，此二者必须一致才能确定相应的sql
     List<Question> selectQuestion(@Param("userId") int userId,
                                          @Param("offset") int offset,
                                          @Param("limit") int limit);

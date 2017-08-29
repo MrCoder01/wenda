@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
@@ -35,7 +37,7 @@ public class LoginController {
                            @RequestParam(value = "next", required = false) String next,
                            HttpServletResponse response) {
 
-        Map<String, String> map = userService.register(username, password, headUrl);
+        Map<String, String> map = userService.register(username, password);
         try {
             if (map.containsKey("ticket")) {
                 Cookie cookie = new Cookie("ticket", map.get("ticket"));
@@ -72,10 +74,15 @@ public class LoginController {
                         @RequestParam("password") String password,
                         @RequestParam(value = "remeberme", defaultValue = "false") boolean remeberme,
                         @RequestParam(value = "next", required = false) String next,
+                        HttpServletRequest request,
                         HttpServletResponse response) {
 
         Map<String, String> map = userService.login(username, password);
         try {
+//            测试filter
+//            HttpSession session = request.getSession();
+//            session.setAttribute("user", userService.getByName(username));
+
             if (map.containsKey("ticket")) {
                 Cookie cookie = new Cookie("ticket", map.get("ticket"));
                 cookie.setPath("/");
