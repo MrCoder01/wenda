@@ -50,4 +50,8 @@ public class RequestCountAspect {
         logger.info("SPEND TIME:" + (System.currentTimeMillis()-startTime.get()));
         logger.info("RUQUEST_COUNTS:" + requestCount.get());
     }
+
+    public long getCount(){
+        return requestCount.get();
+    }
 }
