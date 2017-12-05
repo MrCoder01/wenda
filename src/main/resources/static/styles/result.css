@@ -230,9 +230,9 @@ body {
 .placeholder-label-hilight {
     color:#A02313!important
 }
-.placeholder-hilight::-webkit-input-placeholder,.placeholder-hilight::-moz-input-placeholder,.placeholder-hilight::input-placeholder {
-    color:#A02313!important
-}
+/*.placeholder-hilight::-webkit-input-placeholder,.placeholder-hilight::-moz-input-placeholder,.placeholder-hilight::input-placeholder {*/
+    /*color:#A02313!important*/
+/*}*/
 div[contentEditable],input,textarea,button,a:link {
     -webkit-tap-highlight-color:rgba(225,225,225,.5)
 }
@@ -459,7 +459,7 @@ address,sup {
     margin:0 0 15px
 }
 .zg-locked {
-    background:transparent url(../images/img/lock.070c061d.gif) scroll no-repeat 0 5px;
+   // background:transparent url(../images/img/lock.070c061d.gif) scroll no-repeat 0 5px;
     color:#999;
     padding:0 0 0 15px
 }
@@ -1186,10 +1186,10 @@ html.no-touchevents .icon-delete:hover {
     vertical-align:-3px;
     background-size:14px 15px;
     background-repeat:no-repeat;
-    background-image:url(../images/res/grey-loading.b016b1c7.gif)
+  //  background-image:url(../images/res/grey-loading.b016b1c7.gif)
 }
 .spinner-lightgray {
-    background-image:url(../images/res/lightgray-loading.e0eefd9c.gif)
+  //  background-image:url(../images/res/lightgray-loading.e0eefd9c.gif)
 }
 .icon-weibo-corner {
     background-position:-157px -222px;
@@ -1518,22 +1518,22 @@ html.no-touchevents .meta-item:hover .z-icon-comment {
     background-size:308px 250px
 }
 .spinner-gray {
-    background-image:url(../images/res/grey-loading@2x.c8492b4b.gif)
+  //  background-image:url(../images/res/grey-loading@2x.c8492b4b.gif)
 }
 .spinner-lightgray {
-    background-image:url(../images/res/lightgray-loading@2x.0ac3edf8.gif)
+   // background-image:url(../images/res/lightgray-loading@2x.0ac3edf8.gif)
 }
 }.zg-icon-rare {
     width:16px;
     height:16px;
-    background-image:url(../images/img/sprites-rare-0.1.42f52e35.png);
+  //  background-image:url(../images/img/sprites-rare-0.1.42f52e35.png);
     background-repeat:no-repeat;
     display:inline-block;
     vertical-align:middle
 }
 @media (-webkit-min-device-pixel-ratio:2),(min-resolution:2dppx),(min-resolution:192dpi) {
     .zg-icon-rare {
-    background-image:url(../images/img/sprites-rare-0.1@2x.4c1b03dc.png);
+  //  background-image:url(../images/img/sprites-rare-0.1@2x.4c1b03dc.png);
     background-size:256px 30px
 }
 }.zg-btn-blue,.zg-btn-green,.zg-btn-red,.zg-btn-white,.zg-btn-disabled {
@@ -1706,17 +1706,17 @@ html.no-touchevents .zg-link-btn:hover {
     text-decoration:underline
 }
 .z-ico-play-video,.z-ico-wechat-right-panel,.z-ico-show-password,.z-ico-hide-password,.z-ico-weibo,.z-ico-wechat-unlogin-page,.z-ico-weibo-share,.z-ico-wechat-share,.z-ico-green-check,.z-ico-gray-check,.z-ico-daily-share,.z-ico-qq,.z-ico-wechat,.z-ico-textedit,.z-ico-shameimaru-close,.z-ico-left,.z-ico-close,.z-ico-community:hover,.z-ico-community,.z-ico-video,.z-ico-extern-gray,.z-ico-extern-blue {
-    background-image:url(../images/img/compiled/icons_a9b07ecead.261e7c3b.png);
+   // background-image:url(../images/img/compiled/icons_a9b07ecead.261e7c3b.png);
     background-repeat:no-repeat;
     background-size:108px 93px
 }
 @media screen and (-webkit-min-device-pixel-ratio:1),screen and (min--moz-device-pixel-ratio:1),screen and (min-device-pixel-ratio:1),screen and (min-resolution:1dppx) {
     .z-ico-play-video,.z-ico-wechat-right-panel,.z-ico-show-password,.z-ico-hide-password,.z-ico-weibo,.z-ico-wechat-unlogin-page,.z-ico-weibo-share,.z-ico-wechat-share,.z-ico-green-check,.z-ico-gray-check,.z-ico-daily-share,.z-ico-qq,.z-ico-wechat,.z-ico-textedit,.z-ico-shameimaru-close,.z-ico-left,.z-ico-close,.z-ico-community:hover,.z-ico-community,.z-ico-video,.z-ico-extern-gray,.z-ico-extern-blue {
-    background-image:url(../images/img/compiled/icons_a9b07ecead.261e7c3b.png)
+   // background-image:url(../images/img/compiled/icons_a9b07ecead.261e7c3b.png)
 }
 }@media screen and (-webkit-min-device-pixel-ratio:2),screen and (min--moz-device-pixel-ratio:2),screen and (min-device-pixel-ratio:2),screen and (min-resolution:2dppx) {
     .z-ico-play-video,.z-ico-wechat-right-panel,.z-ico-show-password,.z-ico-hide-password,.z-ico-weibo,.z-ico-wechat-unlogin-page,.z-ico-weibo-share,.z-ico-wechat-share,.z-ico-green-check,.z-ico-gray-check,.z-ico-daily-share,.z-ico-qq,.z-ico-wechat,.z-ico-textedit,.z-ico-shameimaru-close,.z-ico-left,.z-ico-close,.z-ico-community:hover,.z-ico-community,.z-ico-video,.z-ico-extern-gray,.z-ico-extern-blue {
-    background-image:url(../images/img/compiled/icons@2x_a9b07ecead.58bad5a6.png)
+   // background-image:url(../images/img/compiled/icons@2x_a9b07ecead.58bad5a6.png)
 }
 }.z-ico-play-video {
     background-position:-1px -1px;
@@ -2047,7 +2047,7 @@ html.no-touchevents a:hover .sprite-global-icon-fold-round-default,html.no-touch
     vertical-align:middle
 }
 .sprite-rare,[class*=sprite-rare-] {
-    background-image:url(../images/img/rare/sprites.auto.768f71ae.png);
+  //  background-image:url(../images/img/rare/sprites.auto.768f71ae.png);
     background-repeat:no-repeat
 }
 .sprite-rare-icon-ok {
@@ -2057,7 +2057,7 @@ html.no-touchevents a:hover .sprite-global-icon-fold-round-default,html.no-touch
 }
 @media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi) {
     .sprite-rare,[class*=sprite-rare-] {
-    background-image:url(../images/img/rare/sprites@2x.auto.375a8003.png);
+  //  background-image:url(../images/img/rare/sprites@2x.auto.375a8003.png);
     background-size:30px 30px
 }
 }.editable pre {
@@ -2467,29 +2467,29 @@ textarea.Input {
     height:100px;
     border-radius:4px
 }
-.avatar.\34 0 {
-    width:40px;
-    height:40px;
-    border-radius:4px
-}
-.avatar.\35 0 {
-    width:50px;
-    height:50px;
-    border-radius:4px
-}
-.avatar.\36 0 {
-    width:60px;
-    height:60px;
-    border-radius:4px
-}
+/*.avatar.\34 0 {*/
+    /*width:40px;*/
+    /*height:40px;*/
+    /*border-radius:4px*/
+/*}*/
+/*.avatar.\35 0 {*/
+    /*width:50px;*/
+    /*height:50px;*/
+    /*border-radius:4px*/
+/*}*/
+/*.avatar.\36 0 {*/
+    /*width:60px;*/
+    /*height:60px;*/
+    /*border-radius:4px*/
+/*}*/
 .Spinner {
     display:inline-block;
     width:14px;
     height:15px;
-    background-image:url(../images/res/grey-loading.b016b1c7.gif)
+   // background-image:url(../images/res/grey-loading.b016b1c7.gif)
 }
 .Spinner--light {
-    background-image:url(../images/res/lightgray-loading.e0eefd9c.gif)
+   // background-image:url(../images/res/lightgray-loading.e0eefd9c.gif)
 }
 .Sorter {
     overflow:hidden;
@@ -2664,7 +2664,7 @@ html.is-AppPromotionBarVisible .AppPromotionBar {
     width:21px;
     height:21px;
     padding:19px 12px 20px;
-    background-image:url(../images/img/app_promotion_bar/close.d37dfef8.png);
+   // background-image:url(../images/img/app_promotion_bar/close.d37dfef8.png);
     background-position:center;
     background-repeat:no-repeat;
     background-size:21px
@@ -2674,7 +2674,7 @@ html.is-AppPromotionBarVisible .AppPromotionBar {
     margin:9.5px 10px 0;
     width:41px;
     height:41px;
-    background-image:url(../images/img/app_promotion_bar/icon.926a6569.png);
+  //  background-image:url(../images/img/app_promotion_bar/icon.926a6569.png);
     background-position:center;
     background-size:41px
 }
@@ -2683,7 +2683,7 @@ html.is-AppPromotionBarVisible .AppPromotionBar {
 }
 @media (-webkit-min-device-pixel-ratio:2),(min-resolution:2dppx) {
     .AppPromotionBar-icon {
-    background-image:url(../images/img/app_promotion_bar/icon@3x.6362b806.png)
+  //  background-image:url(../images/img/app_promotion_bar/icon@3x.6362b806.png)
 }
 }.AppPromotionBar-title,.AppPromotionBar-describe {
     margin-right:84px;
@@ -2724,7 +2724,7 @@ html.is-AppPromotionBarVisible .AppPromotionBar {
     width:30px;
     height:30px;
     padding:30px 25px;
-    background-image:url(../images/img/app_promotion_bar/close_large.be2e2c35.png);
+  //  background-image:url(../images/img/app_promotion_bar/close_large.be2e2c35.png);
     background-size:30px
 }
 .AppPromotionBar-icon {
@@ -2732,7 +2732,7 @@ html.is-AppPromotionBarVisible .AppPromotionBar {
     left:80px;
     width:61px;
     height:61px;
-    background-image:url(../images/img/app_promotion_bar/icon_large.e71ae6e3.png);
+  //  background-image:url(../images/img/app_promotion_bar/icon_large.e71ae6e3.png);
     background-size:61px
 }
 .AppPromotionBar-title,.AppPromotionBar-describe {
@@ -3088,7 +3088,7 @@ html.no-touchevents .Guide-TopicsItem:hover .Guide-TopicsMask {
 }
 }.zm-middle-hilight-box {
     border:solid 1px #c8c49d;
-    background:#f8f9e7 url(../images/img/home_enforce_real_name.a274a7bc.png) scroll no-repeat 14px 14px
+    //background:#f8f9e7 url(../images/img/home_enforce_real_name.a274a7bc.png) scroll no-repeat 14px 14px
 }
 .zm-middle-hilight-box-content {
     padding:20px 10px 10px 70px;
@@ -3136,7 +3136,7 @@ html.no-touchevents .Guide-TopicsItem:hover .Guide-TopicsMask {
     text-indent:-9999px;
     width:18px;
     height:16px;
-    background:url(../images/img/close.c9ff4447.gif) no-repeat 100% center;
+   // background:url(../images/img/close.c9ff4447.gif) no-repeat 100% center;
     opacity:.1;
     -ms-filter:"alpha(Opacity=10)";
     margin:3px 0 0 8px;
@@ -3417,7 +3417,7 @@ html.no-touchevents .zm-item-meta .zm-item-meta-actions a:hover {
 .zm-item .zm-item-btn-collapse a {
     display:inline;
     padding-right:14px;
-    background:url(../images/img/fold-video.eb40a520.png) no-repeat right center
+  //  background:url(../images/img/fold-video.eb40a520.png) no-repeat right center
 }
 .zm-item-answer-cc {
     display:inline-block
@@ -3502,7 +3502,7 @@ html.no-touchevents .zm-item-vote-info a:hover {
     font-weight:700;
     text-shadow:0 1px #222;
     border-radius:0 5px 5px 0;
-    background:url(../images/img/ld.46a2f063.gif) #999 10px center no-repeat
+  //  background:url(../images/img/ld.46a2f063.gif) #999 10px center no-repeat
 }
 .zm-settings-account .zm-form-table-wide {
     width:530px
@@ -3737,7 +3737,7 @@ html.no-touchevents .zm-item-meta>.zg-link-gray:hover {
     position:absolute;
     top:-7px;
     left:1.5em;
-    background:url(../images/img/icon_warning_arrow_up.b143ed4f.png) no-repeat 0 50%
+   // background:url(../images/img/icon_warning_arrow_up.b143ed4f.png) no-repeat 0 50%
 }
 .zu-question-devider {
     margin-top:10px;
@@ -7946,7 +7946,7 @@ a>.invisible {
     float:left;
     width:61px;
     height:100%;
-    background-image:url(../images/res/nk.png);
+    background-image:url(../images/res/wd1.jpg);
     background-repeat:no-repeat;
     background-position:center;
     text-indent:-9999px;
