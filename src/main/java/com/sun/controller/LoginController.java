@@ -33,7 +33,7 @@ public class LoginController {
     public String register(Model model,
                            @RequestParam("username") String username,
                            @RequestParam("password") String password,
-                           @RequestParam("headUrl") String headUrl,
+                           //@RequestParam("headUrl") String headUrl,
                            @RequestParam(value = "next", required = false) String next,
                            HttpServletResponse response) {
 
