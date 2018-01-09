@@ -14,6 +14,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +57,27 @@ public class IndexController {
         }
         model.addAttribute("vos",vos);
         return "index";
+    }
+
+    /**
+     * 分页查询
+     * @param
+     * @return
+     */
+    @RequestMapping(path={"/fyQuery"},method = RequestMethod.POST)
+    public  String fyQuery(Model model,int currentpage,int pagesize){
+
+        List<Question> questionList = questionService.getLastQuestion(0,currentpage*pagesize,pagesize);
+        List<ViewObject> vos = new ArrayList<>();
+        for(Question question:questionList){
+            ViewObject vo = new ViewObject();
+            vo.set("question",question);
+            vo.set("user",userService.getById(question.getUserId()));
+            vo.set("followCount", followService.getFollowersCount(EntityType.ENTITY_QUESTION, question.getId()));
+            vos.add(vo);
+        }
+        model.addAttribute("vos",vos);
+        return "fenye";
     }
 
     @RequestMapping(path={"/user/{userId}"})

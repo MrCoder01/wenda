@@ -69,9 +69,9 @@
 
                     <div class="zm-votebar goog-scrollfloater js-vote" data-id="$!{comment.comment.id}">
                         #if($comment.liked > 0)
-                        <button class="up js-like pressed" title="赞同">
+                        <button class="up js-like pressed" title="赞同"/>
                         #else
-                        <button class="up js-like" title="赞同">
+                        <button class="up js-like" title="赞同"/>
                         #end
                             <i class="icon vote-arrow"></i>
                             <span class="count js-voteCount">$!{comment.likeCount}</span>
@@ -79,9 +79,9 @@
                         </button>
 
                         #if($comment.liked < 0)
-                        <button class="down js-dislike pressed" title="反对，不会显示你的姓名">
+                        <button class="down js-dislike pressed" title="反对，不会显示你的姓名"/>
                         #else
-                        <button class="down js-dislike" title="反对，不会显示你的姓名">
+                        <button class="down js-dislike" title="反对，不会显示你的姓名"/>
                         #end
                             <i class="icon vote-arrow"></i>
                             <span class="label sr-only">反对，不会显示你的姓名</span>
@@ -102,7 +102,10 @@
                     <div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="6727688" data-action="/answer/content" data-author-name="营销岛" data-entry-url="/question/36301524/answer/66862039">
 
                         <div class="zm-editable-content clearfix">
-                            $comment.comment.content
+                            <div name="co">${comment.comment.content}</div>
+                            <input name="temp" value="${comment.comment.content}" type="hidden"/>
+
+
                         </div>
                     </div>
                     <a class="zg-anchor-hidden ac" name="22162611-comment"></a>
@@ -126,9 +129,46 @@
             <div id="zh-question-answer-form-wrap" class="zh-question-answer-form-wrap">
                 <div class="zm-editable-editor-wrap" style="">
                     <div class="zm-editable-editor-outer">
-                        <div class="zm-editable-editor-field-wrap">
-                            <textarea name="content" id="content" class="zm-editable-editor-field-element editable" style="width:100%;"></textarea>
+                        <!--<div class="zm-editable-editor-field-wrap">-->
+                            <!--<textarea name="content" id="content" class="zm-editable-editor-field-element editable" style="width:100%;"></textarea>-->
+
+                        <!--</div>-->
+                        <div id="div1" >
+
                         </div>
+                        <div style="display: none">
+                            <textarea id="content" name="content"  style="width:100%; height:200px;"></textarea>
+                        </div>
+                        <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+                        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+                        <script type="text/javascript" src="/scripts/main/comment/wangEditor.min.js"></script>
+                        <script type="text/javascript">
+                            var E = window.wangEditor;
+                            var editor = new E('#div1');
+                            var $text1 = $('#content');
+                            editor.customConfig.onchange = function (txt) {
+                                // 监控变化，同步更新到 textarea
+                                $text1.val(txt)
+                            };
+                            // 或者 var editor = new E( document.getElementById('#editor') )
+                            editor.customConfig.uploadImgShowBase64 = true;
+//                            editor.customConfig.uploadImgServer = '/uploadPic';
+//                            //配置后台MultipartFile对应的文件名字
+//                            editor.customConfig.uploadFileName = 'myFileName';
+//                            editor.customConfig.uploadImgHooks = {
+//                                success: function (xhr, editor, result) {
+//                                    // 图片上传并返回结果，图片插入成功之后触发
+//                                    // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
+//                                    alert('上传成功！')
+//                                }
+//                            };
+                            editor.customConfig.showLinkImg = false;
+                            editor.create();
+
+
+
+
+                        </script>
                     </div>
 
                     <div class="zm-command clearfix">
@@ -143,5 +183,18 @@
     </div>
 </div>
 #parse("js.html")
+<script type="text/javascript">
+    function escape2Html(str) {
+        var arrEntities={'lt':'<','gt':'>','nbsp':' ','amp':'&','quot':'"'};
+        return str.replace(/&(lt|gt|nbsp|amp|quot);/ig,function(all,t){return arrEntities[t];});
+    }
+    var is = document.getElementsByName('temp');
+    var ds = document.getElementsByName('co');
+    for(var i=0;i<is.length;i++){    //循环
+
+        ds[i].innerHTML=escape2Html(is[i].value);                //items[i]是当前元素
+    }
+
+</script>
 <script type="text/javascript" src="/scripts/main/site/detail.js"></script>
 #parse("footer.html")

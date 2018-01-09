@@ -1,6 +1,7 @@
 #parse("header.html")
 <link rel="stylesheet" href="../styles/index.css">
 <link rel="stylesheet" href="../styles/detail.css">
+
     <div class="zg-wrap zu-main clearfix " role="main">
         <div class="zu-main-content">
             <div class="zu-main-content-inner">
@@ -46,7 +47,8 @@
                                                         <span class="js-voteCount">4168</span>&nbsp;人赞同</a></span>
                                             </div>
                                             <div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="123114" data-action="/answer/content" data-author-name="李淼" data-entry-url="/question/19857995/answer/13174385">
-                                                <div class="zh-summary summary clearfix">${vo.question.content}</div>
+                                                <div name="box" class="zh-summary summary clearfix">${vo.question.content}</div>
+
                                             </div>
                                         </div>
                                         <div class="feed-meta">
@@ -56,8 +58,6 @@
                                                         <i class="z-icon-follow"></i>关注问题</a>
                                                     <a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
                                                         <i class="z-icon-comment"></i>${vo.question.commentCount} 条评论</a>
-
-
                                                     <button class="meta-item item-collapse js-collapse">
                                                         <i class="z-icon-fold"></i>收起</button>
                                                 </div>
@@ -69,11 +69,49 @@
                             </div>
                         </div>
                         #end
+                        <a href="javascript:;" id="zh-load-more" data-method="next" class="zg-btn-white zg-r3px zu-button-more" style="">更多</a></div>
                     </div>
-                    <a href="javascript:;" id="zh-load-more" data-method="next" class="zg-btn-white zg-r3px zu-button-more" style="">更多</a></div>
             </div>
         </div>
     </div>
 #parse("js.html")
 <script type="text/javascript" src="/scripts/main/site/detail.js"></script>
+<!--<script type="text/javascript">-->
+    <!--function show()-->
+    <!--{-->
+        <!--var box = document.getElementsByName("box");-->
+        <!--var size = box.length;-->
+        <!--var text = new Array(size);-->
+        <!--var newBox = new Array(size);-->
+        <!--var btn = new Array(size);-->
+        <!--for(var i=0;i<box.length;i++){    //循环-->
+            <!--text[i] = box[i].innerHTML;-->
+            <!--newBox[i] = document.createElement("div");-->
+            <!--btn[i] = document.createElement("a");-->
+            <!--newBox[i].innerHTML = text[i].substring(0,20);-->
+            <!--btn[i].innerHTML = text[i].length > 20 ? "...显示全部" : "";-->
+            <!--btn[i].href = "#";-->
+            <!--btn[i].onclick = function(){-->
+                <!--if(btn[i].innerHTML == "...显示全部")-->
+                <!--{-->
+                    <!--btn[i].innerHTML = "收起";-->
+                    <!--newBox[i].innerHTML = text[i];-->
+                <!--}-->
+                <!--else-->
+                <!--{-->
+                    <!--btn[i].innerHTML = "...显示全部";-->
+                    <!--newBox[i].innerHTML = text[i].substring(0,20);-->
+                <!--}-->
+            <!--};-->
+            <!--box[i].innerHTML = "";-->
+            <!--box[i].appendChild(newBox[i]);-->
+            <!--box[i].appendChild(btn[i]);-->
+        <!--}-->
+
+    <!--}-->
+    <!--window.onload=function()-->
+    <!--{-->
+        <!--show();-->
+    <!--}-->
+<!--</script>-->
 #parse("footer.html")

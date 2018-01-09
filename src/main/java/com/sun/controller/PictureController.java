@@ -20,10 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by TY on 2017/5/3.
@@ -108,7 +105,7 @@ public class PictureController {
      */
     @ResponseBody
     @RequestMapping(value="/uploadImg",method = {RequestMethod.POST})
-    public String uploadPicture(@RequestParam(value = "file", required = false) MultipartFile file,
+    public String uploadPicture(@RequestParam(value = "data", required = false) MultipartFile file,
                                 HttpServletRequest request) {
 
         int code = 1;
@@ -148,5 +145,51 @@ public class PictureController {
             code = 0;
         }
         return WendaUtil.getJSONString(code,msg);
+    }
+
+    @ResponseBody
+    @RequestMapping(value="/uploadPic",method = {RequestMethod.POST})
+    public Map<String,Object> uploadPic(@RequestParam(value = "myFileName", required = false) MultipartFile file, HttpServletRequest request) {
+
+        Map<String,Object> map = new HashMap<>();
+        int code = 1;
+        String fileName = file.getOriginalFilename();//获取文件名加后缀
+        String url = "";
+        if (fileName != null && fileName != "") {
+            String newfilename = sdf.format(new Date()) + new Random().nextInt(1000) + file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+            try {
+                //得到工程根目录:request.getSession().getServletContext().getRealPath()
+                String returnUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
+                String rootPath = request.getSession().getServletContext().getRealPath("/");
+                String tempPath = rootPath + "images/upload/";
+                String realPath = "D:/work/workspace/wenda/src/main/resources/static/images/upload/";
+
+                //只是创建了逻辑上目录，并未设置为实际目录
+                File path = new File(tempPath);
+                File realFile = new File(realPath);
+                //把path设为实际目录
+                if (!path.exists()&& !path.isDirectory()) {
+                    path.mkdirs();
+                }
+                if (!realFile.exists()) {
+                    realFile.mkdirs();
+                }
+                //在临时目录上创建临时文件
+                File fileSource = new File(path,newfilename);
+                File realFileSource = new File(realFile,newfilename);
+                //将上传的文件复制到临时文件
+                file.transferTo(fileSource);
+                //将临时文件复制到资源库中，注意不能使用file转换到资源库
+                //FileUtils.copyFile(fileSource,realFileSource);
+                Files.copy(fileSource.toPath(),realFileSource.toPath());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            url = "/images/upload/"+newfilename;
+            code = 0;
+        }
+        map.put("errno",code);
+        map.put("url",url);
+        return map;
     }
 }

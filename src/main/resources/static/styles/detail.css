@@ -8318,14 +8318,14 @@ html.no-touchevents .zu-top-nav-userinfo:hover {
 .topnav-noauth a {
     padding:0 10px;
     width:auto;
-    height:46px;
+    height:45px;
     line-height:46px;
     text-align:center;
     display:block;
     color:#eee;
     text-shadow:0 1px 1px rgba(0,0,0,.12);
     white-space:nowrap;
-    font-size:14px
+    font-size:14px;
 }
 .topnav-noauth a:hover {
     color:#fff;
