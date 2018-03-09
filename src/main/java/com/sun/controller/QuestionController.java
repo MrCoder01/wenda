@@ -1,5 +1,8 @@
 package com.sun.controller;
 
+import com.sun.async.EventModel;
+import com.sun.async.EventProducer;
+import com.sun.async.EventType;
 import com.sun.model.*;
 import com.sun.service.*;
 import com.sun.util.WendaUtil;
@@ -40,6 +43,9 @@ public class QuestionController {
     @Autowired
     FollowService followService;
 
+    @Autowired
+    EventProducer eventProducer;
+
     @RequestMapping(value = "/question/add",method = {RequestMethod.POST})
     //不是返回页面，添此次注解
     @ResponseBody
@@ -57,6 +63,9 @@ public class QuestionController {
                 question.setUserId(hostHolder.getUser().getId());
             }
             questionService.addQuestion(question);
+            eventProducer.fireEvent(new EventModel(EventType.ADD_QUESTION)
+                    .setActorId(question.getUserId()).setEntityId(question.getId())
+                    .setExts("title", question.getTitle()).setExts("content", question.getContent()));
             //返回json形式的标志位给前台，是否添加成功（0成功）
             return WendaUtil.getJSONString(0);
 
